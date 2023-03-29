@@ -15,6 +15,6 @@ public class StrongAES {
 class Check{
     public static void main(String[] args) {
         StrongAES strongAES = new StrongAES();
-        System.out.println(strongAES.encrypt("tasty"));
+        System.out.println(strongAES.encrypt("aman"));
     }
 }

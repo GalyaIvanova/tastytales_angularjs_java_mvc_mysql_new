@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Tasty Tales Home</title>
+    <link rel="stylesheet" href="style_en.css">
+    <style>
+        body {
+          padding: 0;
+          font-family: 'Roboto';
+
+        }
+        
+        video {
+          width: 100%;
+        }
+
+        .videopage {
+            background-color: white;
+            padding-left:20px ;
+            padding-right: 20px;
+            padding-bottom: 10px;
+        }
+        
+        .red-box {
+          background-color: #FFF1E0;
+          border-radius: 15px;
+          padding: 20px;
+          margin-top: 20px;
+        display: flex;
+            }
+        
+        form {
+          margin-bottom: 20px;
+        }
+        .ratings {
+            height: 30px;
+        }
+        .comments {
+  background-color: whitesmoke;
+  border-radius: 45px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comments img {
+  margin-right: 10px;
+}
+
+.comments h2 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.comments hr {
+  border: none;
+  height: 1px;
+  background-color: #ccc;
+  margin: 20px 0;
+}
+
+
+      </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+            <a href="index_en.html"><img src="img/logo.png" alt="Logo" width="100" height="100" style="margin-top: 10px;"></a>
+        </div>
+        <form class="search-form">
+          <input type="text" name="search" placeholder="Recherche...">
+          <button type="submit">Rechercher</button>
+        </form>
+        <div class="links">
+          <a href="#">
+            <img src="img/user.png" alt="Image 1" width="50" height="50">
+          </a>
+          <a href="#">
+            <img src="img/uk.png" alt="Image 2" width="50" height="50">
+          </a>
+        </div>
+      </div>
+      </div>
+      <div class="categories">
+        <a href="#"><div class="category">
+            <h4>Breakfast</h4>
+          </div></a>
+          <a href="#"><div class="category">
+            <h4>Lunch</h4>
+          </div></a>
+          <a href="#"><div class="category">
+            <h4>Dinner</h4>
+          </div></a>
+          <a href="#"><div class="category">
+            <h4>Desserts</h4>
+          </div></a>
+          <a href="#"><div class="category">
+            <h4>Drinks</h4>
+          </div></a>
+        </div> 
+    </header>
+    <div class="videopage">
+        <video src="promo.mp4" controls></video>
+        <h1>Video Title</h1>
+        <h2>User name</h2>
+        <div class="red-box">
+          <form >
+            <label for="note">Rate this video</label>
+            <input class="ratings" type="number" id="note" name="note" min="-1" max="5">
+            <button type="submit"><img src="img/logos/heart.png" width="20px" alt=""></button>
+          </form>
+        </div>
+        <div class="red-box">
+          <p>Current Ratings:</p>
+        </div>
+        <h2>Description</h2>
+        <div class="description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu lorem bibendum, vestibulum massa quis, sollicitudin neque. Nullam eget ullamcorper velit. Quisque vel nibh id ante mollis suscipit nec vel sem. Donec bibendum elit quis erat sagittis ultrices. Proin semper neque a dolor lobortis, quis pharetra urna consectetur. Sed eget arcu nulla. Nullam euismod lectus quis vehicula egestas. Mauris sollicitudin ipsum sit amet luctus scelerisque. Maecenas hendrerit, elit vel rhoncus molestie, libero elit laoreet tortor, ac pulvinar eros odio vitae enim.
+        </div><br><br><br>
+        <div class="comments">
+            <img src="img/logos/comment.png" alt="Comment logo" width="30">
+            <h2>Comments</h2>
+            <hr>
+            <!-- Insert comment section here -->
+          </div>
+          <br><br><br>
+    </div>  
+    <footer>
+        <div class="footer_categories">
+          <p>Categories</p>
+          <ul>
+            <li><a href="#">Breakfast</a></li>
+            <li><a href="#">Lunch</a></li>
+            <li><a href="#">Dinner</a></li>
+            <li><a href="#">Desserts</a></li>
+            <li><a href="#">Drinks</a></li>
+          </ul>
+        </div>
+        <div class="team">
+          <p>About Us</p>
+          <ul>
+            <li><a href="#">Our Team</a></li>
+            <li><a href="#">The Devs</a></li>
+            <li><a href="#">The Graphic Designers</a></li>
+            <li><a href="#">The Comm</a></li>
+            <li><a href="#">Join Us</a></li>
+          </ul>
+        </div>
+        <div class="more">
+          <p>More</p>
+          <ul>
+            <li><a href="#">Our Goals</a></li>
+            <li><a href="#">Term & Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Database</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </div>
+        <div class="contact">
+          <p>Contact</p>
+          <ul>
+            <li><a href="#">+33 4 54 89 90</a></li>
+            <li><a href="#">tastytales@cook.com</a></li>
+            <li><a href="#">5 rue Rimbaud, 75013</a></li>
+            <li><a href="#">Paris, France</a></li>
+            <li><a href="#">Social Media</a></li>
+          </ul>
+        </div>
+        
+        <div class="social">
+          <a href="#"><img src="img/logos/youtube.png" alt="YouTube" width="50px"></a>
+          <a href="#"><img src="img/logos/facebook.png" alt="Facebook" width="50px"></a>
+          <a href="#"><img src="img/logos/twitter.png" alt="Twitter" width="50px"></a>
+          <a href="#"><img src="img/logos/tiktok.png" alt="TikTok" width="50px"></a>
+          <a href="#"><img src="img/logos/instagram.png" alt="Instagram" width="50px"></a>
+        </div><br><br>
+    <h3 class="rights">Tasty Tales Corp 2023 | All rights reserved</h3>  
+    </footer>
+    </body>
+</html>

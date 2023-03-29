@@ -9,8 +9,8 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.xwiggy</groupId>
-    <artifactId>xwiggy</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <artifactId>galka</artifactId>
+    <version>0.0.1-tastytales</version>
     <name>xwiggy</name>
     <description>Demo project for Spring Boot</description>
 
@@ -52,27 +52,45 @@
     </dependencies>
 
     <build>
+
+<!--            <plugins>-->
+<!--                <plugin>-->
+<!--                    <groupId>org.apache.maven.plugins</groupId>-->
+<!--                    <artifactId>maven-war-plugin</artifactId>-->
+<!--                    <version>3.2.3</version>-->
+<!--                    <configuration>-->
+<!--                        <webResources>-->
+<!--                            <resource>-->
+<!--                                <directory>G:/tastynew/TastytalesAngular8-SpringBoot-MVC-JPA-MYSQL/xwiggy-app</directory>-->
+<!--                            </resource>-->
+<!--                        </webResources>-->
+<!--                    </configuration>-->
+<!--                </plugin>-->
+<!--            </plugins>-->
+
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
             <plugin>
-                <artifactId>maven-resources-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.2.3</version>
                 <executions>
                     <execution>
                         <id>copy-resources</id>
                         <phase>validate</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
+<!--                        <goals>-->
+<!--                            <goal>copy-resources</goal>-->
+<!--                        </goals>-->
                         <configuration>
                             <outputDirectory>${project.build.directory}/classes/static/</outputDirectory >
-                            <resources>
+                            <webResources>
                                 <resource>
                                     <directory>../xwiggy-app/dist/xwiggy-app</directory>
                                 </resource>
-                            </resources>
+                            </webResources>
                         </configuration>
                     </execution>
                 </executions>

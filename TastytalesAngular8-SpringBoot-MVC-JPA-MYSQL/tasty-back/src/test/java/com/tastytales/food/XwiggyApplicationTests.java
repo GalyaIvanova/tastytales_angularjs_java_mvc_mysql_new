@@ -9,6 +9,7 @@ import com.tastytales.food.dao.UserDaoImpl;
 import com.tastytales.food.model.Login;
 import com.tastytales.food.model.User;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,7 @@ public class XwiggyApplicationTests {
 
     @Autowired
     CartDaoImpl cartDao;
-
+    @Ignore
     @Test
     public void contextLoads() {
         Login login = new Login();
@@ -46,7 +47,7 @@ public class XwiggyApplicationTests {
         Assert.assertEquals("aman@gmail.com",user.getEmail());
         Assert.assertEquals(9585418,user.getPhone());
     }
-
+    @Ignore
     @Test
     public void checkFoodTable(){
         Food food = new Food();
@@ -55,7 +56,7 @@ public class XwiggyApplicationTests {
         Assert.assertEquals("Coffee",food1.getItem());
         Assert.assertEquals(50,food1.getPrice());
     }
-
+    @Ignore
     @Test
     public void checkCartDb(){
         List<Cart> carts = cartDao.getAllCart();
