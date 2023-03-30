@@ -1,12 +1,12 @@
 package com.tastytales.food.model;
 
-public class NewCart {
+public class NewFavorites {
 
     private int quantity;
 
-    public NewCart(){}
+    public NewFavorites(){}
 
-    public NewCart(int quantity) {
+    public NewFavorites(int quantity) {
         this.quantity = quantity;
     }
 
@@ -20,7 +20,7 @@ public class NewCart {
 
     @Override
     public String toString() {
-        return "NewCart{" +
+        return "NewFavorites{" +
                 "quantity=" + quantity +
                 '}';
     }

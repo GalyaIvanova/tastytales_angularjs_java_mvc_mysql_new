@@ -17,7 +17,7 @@ export class WelcomeComponent implements OnInit {
     firstname:'',
     lastname:'',
     address:'',
-    merchant:null
+    author:null
   };
 
   constructor(private router:Router) {

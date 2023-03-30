@@ -32,11 +32,11 @@ export class LoginComponent implements OnInit {
       res => {
         // localStorage.setItem(key,JSON.stringify(res));
         sessionStorage.setItem(key,JSON.stringify(res));
-        if(res!=null && !res.merchant) {
+        if(res!=null && !res.author) {
           this.router.navigate(['welcome']);
         }
-        if(res!=null && res.merchant){
-          this.router.navigate(['merchantWelcome']);
+        if(res!=null && res.author){
+          this.router.navigate(['authorWelcome']);
         }
         if(res==null) {
           this.message = "Username Or Password is Wrong";

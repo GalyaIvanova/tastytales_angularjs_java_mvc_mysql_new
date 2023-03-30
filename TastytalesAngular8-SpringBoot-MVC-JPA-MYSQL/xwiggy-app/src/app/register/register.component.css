@@ -23,17 +23,17 @@ table{
 }
 
 .bigbutton {
-  border-radius: 4px;
-  background-color: #f4511e;
+  background-color: #FFCE3B;
+  color: #fff;
+  padding: 10px;
+
+  font-size: 16px;
+  border-radius: 15px;
   border: none;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 15px;
-  padding: 20px;
-  width: 120px;
-  transition: all 0.5s;
   cursor: pointer;
-  margin: 5px;
+  margin-top: 10px;
+  margin:20px;
+  width: 150px;
 }
 
 .bigbutton span {
@@ -62,17 +62,22 @@ table{
 }
 
 a:link, a:visited {
-  background-color: #f44336;
-  color: white;
-  padding: 14px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
+
+  background-color: #FFCE3B;
+  color: #fff;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 100%;
+
 }
 
-a:hover, a:active {
-  background-color: red;
-}
+/*a:hover, a:active {*/
+/*  background-color: red;*/
+/*}*/
 
 select {
   width: 203px;
@@ -131,4 +136,18 @@ msg-error {
   border: solid 2px #c64848;
   padding: .2em;
   width: 19em;
+}
+
+
+div.reg-form{
+  /*position: fixed;*/
+  margin-top:4em;
+  background: rgba(156, 105, 17, 0.63);
+  border-radius:10px ;
+}
+
+
+.register-button:hover,
+.signin-button:hover {
+  background-color: #eeb200;
 }

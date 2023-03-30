@@ -15,8 +15,8 @@ public class FoodController {
     @Autowired
     FoodDaoImpl foodDao;
 
-    @RequestMapping(value = "/menu")
-    public List<Food> getMenu(Model model) {
+    @RequestMapping(value = "/library")
+    public List<Food> getLibrary(Model model) {
         List<Food> foodItems ;
         foodItems = foodDao.getFoodList();
         return foodItems;

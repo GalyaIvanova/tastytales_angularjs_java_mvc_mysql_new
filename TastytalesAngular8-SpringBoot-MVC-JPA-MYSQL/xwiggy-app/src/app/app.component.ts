@@ -21,7 +21,7 @@ export class AppComponent {
     firstname:'',
     lastname:'',
     address:'',
-    merchant:null
+    author:null
   };
 
 }
@@ -33,6 +33,6 @@ export interface User{
   email:string;
   address:string;
   phone:number;
-  merchant:boolean;
+  author:boolean;
 }
 

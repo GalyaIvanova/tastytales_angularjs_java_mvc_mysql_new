@@ -51,19 +51,18 @@ form div {
 
 
 .bigbutton {
-  border-radius: 4px;
-  background-color: #f4511e;
-  border: none;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 15px;
-  padding: 20px;
-  width: 120px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
-}
+  background-color: #FFCE3B;
+  color: #fff;
+  padding: 10px;
 
+  font-size: 16px;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  margin:20px;
+  width: 150px;
+}
 .bigbutton span {
   cursor: pointer;
   display: inline-block;
@@ -87,4 +86,7 @@ form div {
 .bigbutton:hover span:after {
   opacity: 1;
   right: 0;
+}
+.text-success {
+  color: #FFCE3B !important;
 }

@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cart`
+-- Table structure for table `favorites`
 --
 
-CREATE TABLE `cart` (
+CREATE TABLE `favorites` (
   `quantity1` int(11) NOT NULL,
   `quantity2` int(11) NOT NULL,
   `quantity3` int(11) NOT NULL,
@@ -37,20 +37,20 @@ CREATE TABLE `cart` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `cart`
+-- Dumping data for table `favorites`
 --
 
-INSERT INTO `cart` (`quantity1`, `quantity2`, `quantity3`, `quantity4`, `quantity5`, `quantity6`) VALUES
+INSERT INTO `favorites` (`quantity1`, `quantity2`, `quantity3`, `quantity4`, `quantity5`, `quantity6`) VALUES
 (0, 0, 0, 0, 0, 0),
 (2, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cart0_`
+-- Table structure for table `favorites0_`
 --
 
-CREATE TABLE `cart0_` (
+CREATE TABLE `favorites0_` (
   `id` int(11) NOT NULL,
   `quantity4` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -64,21 +64,21 @@ CREATE TABLE `cart0_` (
 CREATE TABLE `food` (
   `id` varchar(45) NOT NULL,
   `item` varchar(45) NOT NULL,
-  `price` int(11) NOT NULL,
+  `weight` int(11) NOT NULL,
   `quantity` int(11) DEFAULT NULL,
   `url` varchar(120) DEFAULT NULL,
   `formID` varchar(50) NOT NULL,
-  `cartID` varchar(45) NOT NULL
+  `favoritesID` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `food`
 --
 
-INSERT INTO `food` (`id`, `item`, `price`, `quantity`, `url`, `formID`, `cartID`) VALUES
-('abc', 'Coffee', 50, 20, 'https://images.pexels.com/photos/414720/pexels-photo-414720.jpeg', 'modalCart.quantity1', 'quantity1'),
-('bcd', 'Cookie', 20, 16, 'https://images-gmi-pmc.edge-generalmills.com/087d17eb-500e-4b26-abd1-4f9ffa96a2c6.jpg', 'modalCart.quantity2', 'quantity2'),
-('def', 'Cake', 80, 18, 'https://livforcake.com/wp-content/uploads/2017/07/black-forest-cake-thumb-500x500.jpg', 'modalCart.quantity3', 'quantity3'),
+INSERT INTO `food` (`id`, `item`, `weight`, `quantity`, `url`, `formID`, `favoritesID`) VALUES
+('abc', 'Coffee', 50, 20, 'https://images.pexels.com/photos/414720/pexels-photo-414720.jpeg', 'modalFavorites.quantity1', 'quantity1'),
+('bcd', 'Cookie', 20, 16, 'https://images-gmi-pmc.edge-generalmills.com/087d17eb-500e-4b26-abd1-4f9ffa96a2c6.jpg', 'modalFavorites.quantity2', 'quantity2'),
+('def', 'Cake', 80, 18, 'https://livforcake.com/wp-content/uploads/2017/07/black-forest-cake-thumb-500x500.jpg', 'modalFavorites.quantity3', 'quantity3'),
 ('dos', 'Dosa', 100, 12, 'https://www.madhuseverydayindian.com/wp-content/uploads/2020/07/instant-wheat-flour-dosa-500x500.jpg', '', ''),
 ('idl', 'Idli', 30, 52, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUH0Y7rPn4A4J9Cv4roiAZn5eaNLbCr-7X7T_KXltM5g&s', '', '');
 
@@ -96,15 +96,15 @@ CREATE TABLE `user` (
   `email` varchar(45) DEFAULT NULL,
   `address` varchar(45) NOT NULL,
   `phone` int(11) NOT NULL,
-  `merchant` tinyint(4) NOT NULL
+  `author` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`username`, `password`, `firstname`, `lastname`, `email`, `address`, `phone`, `merchant`) VALUES
-('merchant', 'merchant', 'Merchant', 'Merchant', 'merchant@merchant.com', 'Merchant LTD', 1234567890, 1),
+INSERT INTO `user` (`username`, `password`, `firstname`, `lastname`, `email`, `address`, `phone`, `author`) VALUES
+('author', 'author', 'Author', 'Author', 'author@author.com', 'Author LTD', 1234567890, 1),
 ('user', 'user', 'Aman', 'Kumar', 'aman@gmail.com', 'Bangalore, India', 9585418, 0);
 
 --
@@ -112,15 +112,15 @@ INSERT INTO `user` (`username`, `password`, `firstname`, `lastname`, `email`, `a
 --
 
 --
--- Indexes for table `cart`
+-- Indexes for table `favorites`
 --
-ALTER TABLE `cart`
+ALTER TABLE `favorites`
   ADD PRIMARY KEY (`quantity1`);
 
 --
--- Indexes for table `cart0_`
+-- Indexes for table `favorites0_`
 --
-ALTER TABLE `cart0_`
+ALTER TABLE `favorites0_`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -140,9 +140,9 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `cart0_`
+-- AUTO_INCREMENT for table `favorites0_`
 --
-ALTER TABLE `cart0_`
+ALTER TABLE `favorites0_`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 

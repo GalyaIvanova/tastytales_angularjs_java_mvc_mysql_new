@@ -4,19 +4,23 @@ public class NewFood {
 
    private String id;
    private String name;
-   private int price;
+   private int weight;
+    private String description;
+    private String category;
    private int quantityAvailable;
    private String fileDataF;
 
    public NewFood(){}
 
-    public NewFood(String id, String name, int price, int quantityAvailable, String fileDataF) {
+    public NewFood(String id, String name, int weight, int quantityAvailable, String fileDataF) {
         this.id = id;
         this.name = name;
-        this.price = price;
+        this.weight = weight;
         this.quantityAvailable = quantityAvailable;
         this.fileDataF = fileDataF;
     }
+
+
 
     public String getId() {
         return id;
@@ -35,11 +39,11 @@ public class NewFood {
     }
 
     public int getPrice() {
-        return price;
+        return weight;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
+    public void setPrice(int weight) {
+        this.weight = weight;
     }
 
     public int getQuantityAvailable() {
@@ -63,9 +67,26 @@ public class NewFood {
         return "NewFood{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", price=" + price +
+                ", weight=" + weight +
                 ", quantityAvailable=" + quantityAvailable +
                 ", fileDataF=" + fileDataF +
                 '}';
+    }
+
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description=description;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category=category;
     }
 }

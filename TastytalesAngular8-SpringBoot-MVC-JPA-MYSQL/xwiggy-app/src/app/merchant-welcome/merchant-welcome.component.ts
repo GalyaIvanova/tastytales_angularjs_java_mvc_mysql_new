@@ -3,13 +3,13 @@ import {User} from "../app.component";
 import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-merchant-welcome',
-  templateUrl: './merchant-welcome.component.html',
-  styleUrls: ['./merchant-welcome.component.css']
+  selector: 'app-author-welcome',
+  templateUrl: './author-welcome.component.html',
+  styleUrls: ['./author-welcome.component.css']
 })
-export class MerchantWelcomeComponent implements OnInit {
+export class AuthorWelcomeComponent implements OnInit {
 
-  modelMerchant: User = {
+  modelAuthor: User = {
     username:'',
     password:'',
     email:'',
@@ -17,7 +17,7 @@ export class MerchantWelcomeComponent implements OnInit {
     firstname:'',
     lastname:'',
     address:'',
-    merchant:null
+    author:null
   };
 
   constructor(private router:Router) { }
@@ -29,7 +29,7 @@ export class MerchantWelcomeComponent implements OnInit {
 
     let userData = JSON.parse(sessionStorage.getItem('userData'));
     console.log(userData);
-    Object.assign(this.modelMerchant,userData);
+    Object.assign(this.modelAuthor,userData);
   }
 
 

@@ -1,8 +1,8 @@
 package com.tastytales.food;
 
-import com.tastytales.food.model.Cart;
+import com.tastytales.food.model.Favorites;
 import com.tastytales.food.model.Food;
-import com.tastytales.food.dao.CartDaoImpl;
+import com.tastytales.food.dao.FavoritesDaoImpl;
 import com.tastytales.food.dao.FoodDaoImpl;
 import com.tastytales.food.dao.UserDao;
 import com.tastytales.food.dao.UserDaoImpl;
@@ -33,7 +33,7 @@ public class XwiggyApplicationTests {
     FoodDaoImpl foodDao;
 
     @Autowired
-    CartDaoImpl cartDao;
+    FavoritesDaoImpl favoritesDao;
     @Ignore
     @Test
     public void contextLoads() {
@@ -58,9 +58,9 @@ public class XwiggyApplicationTests {
     }
     @Ignore
     @Test
-    public void checkCartDb(){
-        List<Cart> carts = cartDao.getAllCart();
-        Cart zero = carts.get(0);
+    public void checkFavoritesDb(){
+        List<Favorites> favoritess = favoritesDao.getAllFavorites();
+        Favorites zero = favoritess.get(0);
         Assert.assertEquals(0,zero.getQuantity1());
         Assert.assertEquals(0,zero.getQuantity2());
         Assert.assertEquals(0,zero.getQuantity3());

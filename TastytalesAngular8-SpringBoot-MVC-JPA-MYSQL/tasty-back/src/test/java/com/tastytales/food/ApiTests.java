@@ -1,11 +1,11 @@
 package com.tastytales.food;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.tastytales.food.controller.CartController;
+import com.tastytales.food.controller.FavoritesController;
 import com.tastytales.food.controller.FoodController;
 import com.tastytales.food.controller.LoginController;
 import com.tastytales.food.controller.RegistrationController;
-import com.tastytales.food.dao.CartDaoImpl;
+import com.tastytales.food.dao.FavoritesDaoImpl;
 import com.tastytales.food.dao.FoodDaoImpl;
 import com.tastytales.food.dao.UserDao;
 import com.tastytales.food.dao.UserDaoImpl;
@@ -24,7 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest({LoginController.class,RegistrationController.class, FoodController.class, CartController.class})
+@WebMvcTest({LoginController.class,RegistrationController.class, FoodController.class, FavoritesController.class})
 public class ApiTests {
     @Autowired
     private MockMvc mvc;
@@ -39,7 +39,7 @@ public class ApiTests {
     FoodDaoImpl foodDao;
 
     @MockBean
-    CartDaoImpl cartDao;
+    FavoritesDaoImpl favoritesDao;
 
     /*@Test
     public void postLoginAPI() throws Exception
@@ -89,26 +89,26 @@ public class ApiTests {
     }
 
     @Test
-    public void getMenuApi() throws Exception{
+    public void getLibraryApi() throws Exception{
         mvc.perform(MockMvcRequestBuilders
-                .get("/menu")
+                .get("/library")
                 .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk());
     }
 
     /*@Test
-    public void getTotalCartApi() throws Exception{
+    public void getTotalFavoritesApi() throws Exception{
         mvc.perform( MockMvcRequestBuilders
-                .post("/cart")
-                .content(asJsonString(new Cart(1,1,1,1,1,1)))
+                .post("/favorites")
+                .content(asJsonString(new Favorites(1,1,1,1,1,1)))
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }*/
 
     @Test
-    public void getChangeDBCartApi() throws Exception{
+    public void getChangeDBFavoritesApi() throws Exception{
         mvc.perform(MockMvcRequestBuilders
                 .get("/changeDB")
                 .accept(MediaType.APPLICATION_JSON))

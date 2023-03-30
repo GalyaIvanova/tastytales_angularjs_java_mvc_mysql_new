@@ -2,28 +2,28 @@ import {ApplicationModule, Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {Observable} from "rxjs";
-import {MenuServiceService} from "../menu-service.service";
+import {LibraryServiceService} from "../library-service.service";
 import {AppComponent} from "../app.component";
 import {count} from "rxjs/operators";
 
 @Component({
-  selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  selector: 'app-library',
+  templateUrl: './library.component.html',
+  styleUrls: ['./library.component.css']
 })
-export class MenuComponent implements OnInit {
+export class LibraryComponent implements OnInit {
 
-  model:menu[];
+  model:library[];
   values:Quantity[] = [];
   total:number;
 
-  modalCart:cart={
+  modalFavorites:favorites={
     quantity1:0,
     quantity2:0,
     quantity3:0
   };
 
-  constructor(private http:HttpClient, private router:Router,private menuService:MenuServiceService) { }
+  constructor(private http:HttpClient, private router:Router,private libraryService:LibraryServiceService) { }
 
   ngOnInit() {
     if (sessionStorage.getItem("userData") == null) {
@@ -38,7 +38,7 @@ export class MenuComponent implements OnInit {
   }
 
   getItems():void{
-    this.menuService.getItems().subscribe((men: any[]) => {
+    this.libraryService.getItems().subscribe((men: any[]) => {
       this.model = men;
       for (let i=0;i<this.model.length;i++){
         this.values.push(new Quantity());
@@ -50,10 +50,10 @@ export class MenuComponent implements OnInit {
 
   getTotal():void{
     console.log(this.values);
-    let url = "http://localhost:8080/cart";
-    this.modalCart.quantity1=this.values[0].quantity;
-    this.modalCart.quantity2=this.values[1].quantity;
-    this.modalCart.quantity3=this.values[2].quantity;
+    let url = "http://localhost:8080/favorites";
+    this.modalFavorites.quantity1=this.values[0].quantity;
+    this.modalFavorites.quantity2=this.values[1].quantity;
+    this.modalFavorites.quantity3=this.values[2].quantity;
     this.http.post<number>(url,this.values).subscribe(
 
       res=>{
@@ -69,17 +69,17 @@ export class MenuComponent implements OnInit {
   }
 }
 
-export interface menu {
+export interface library {
   id:string;
   item:string;
-  price:number;
+  weight:number;
   quantity:number;
   url:string;
   formID:string;
-  cartID:string;
+  favoritesID:string;
 }
 
-export interface cart {
+export interface favorites {
   quantity1:number;
   quantity2:number;
   quantity3:number;

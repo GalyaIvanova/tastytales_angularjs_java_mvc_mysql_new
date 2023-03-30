@@ -1,7 +1,7 @@
 package com.tastytales.food.controller;
 
-import com.tastytales.food.dao.CartDaoImpl;
-import com.tastytales.food.model.NewCart;
+import com.tastytales.food.dao.FavoritesDaoImpl;
+import com.tastytales.food.model.NewFavorites;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -11,43 +11,43 @@ import java.io.IOException;
 
 @RestController
 @CrossOrigin
-public class CartController {
+public class FavoritesController {
 
     @Autowired
-    CartDaoImpl cartDao;
+    FavoritesDaoImpl favoritesDao;
 
 
-    @PostMapping("/cart")
-    public int getTotal(@RequestBody NewCart[] cart, Model model){
-        cartDao.saveToCart(cart);
-        return cartDao.claculateTotal(cart);
+    @PostMapping("/favorites")
+    public int getTotal(@RequestBody NewFavorites[] favorites, Model model){
+        favoritesDao.saveToFavorites(favorites);
+        return favoritesDao.claculateTotal(favorites);
     }
 
     @RequestMapping("/changeDB")
     public boolean changeDB(){
-        cartDao.updateDB();
+        favoritesDao.updateDB();
         return true;
     }
 
-    @PostMapping("/addToCart")
-    public NewCart[] increaseQuantity(@RequestBody NewCart[] cart, Model model){
-        cartDao.addItems(cart);
-        return cart;
+    @PostMapping("/addToFavorites")
+    public NewFavorites[] increaseQuantity(@RequestBody NewFavorites[] favorites, Model model){
+        favoritesDao.addItems(favorites);
+        return favorites;
     }
 
     @PostMapping("/addNewItem")
     public boolean addNewItem(@RequestParam("file") MultipartFile file, @RequestParam("newFoodItem") String newFoodData) throws IOException {
-        return cartDao.addNewItem(file,newFoodData);
+        return favoritesDao.addNewItem(file,newFoodData);
     }
 
 
     @PostMapping("/addNewItemUrl")
     public boolean addNewItemByUrl(@RequestParam("newFoodItem") String newFoodData) throws IOException {
-        return cartDao.addNewItemWithUrl(newFoodData);
+        return favoritesDao.addNewItemWithUrl(newFoodData);
     }
 
     @PostMapping("/checkItemId")
     public boolean checkItemId(@RequestBody String itemId, Model model){
-        return !cartDao.itemIdAvailable(itemId);
+        return !favoritesDao.itemIdAvailable(itemId);
     }
 }

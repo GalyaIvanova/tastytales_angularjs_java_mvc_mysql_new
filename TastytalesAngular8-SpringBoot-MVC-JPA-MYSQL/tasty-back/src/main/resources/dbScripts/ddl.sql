@@ -20,10 +20,10 @@ CREATE TABLE `corp_tastytales_db1`.`food` (
    `quantity` INT NOT NULL,
    `url` VARCHAR(150) NOT NULL ,
    `formID` VARCHAR(50) NOT NULL ,
-   `cartID` VARCHAR(50) NOT NULL ,
+   `favoritesID` VARCHAR(50) NOT NULL ,
    PRIMARY KEY (`id`));
 
-CREATE TABLE 'corp_tastytales_db1'.'cart' (
+CREATE TABLE 'corp_tastytales_db1'.'favorites' (
   'quantity1' INT NOT NULL ,
   'quantity2' INT NOT NULL ,
   'quantity3' INT NOT NULL ,

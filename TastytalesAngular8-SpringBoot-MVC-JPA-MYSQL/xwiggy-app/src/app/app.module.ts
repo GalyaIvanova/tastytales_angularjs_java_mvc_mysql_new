@@ -4,45 +4,55 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import {Router, RouterModule, Routes} from "@angular/router";
+import {Router, RouterModule, Routes} from '@angular/router';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
-import { FormsModule} from "@angular/forms";
-import { HttpClientModule} from "@angular/common/http";
+import { FormsModule} from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { MenuComponent } from './menu/menu.component';
+import { LibraryComponent } from './library/library.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { SuccessComponent } from './success/success.component';
-import { MerchantWelcomeComponent } from './merchant-welcome/merchant-welcome.component';
-import { MerchantMenuComponent } from './merchant-menu/merchant-menu.component';
+import { AuthorWelcomeComponent } from './author-welcome/author-welcome.component';
+import { AuthorLibraryComponent } from './author-library/author-library.component';
 import { AddItemComponent } from './add-item/add-item.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { VideoComponent } from './video/home.component';
+// // @ts-ignore
+import { HomebgComponent } from './home-bg/home.component';
+import { HomefrComponent } from './home-fr/home.component';
 
-const appRoutes:Routes=[
-  {path:'login',
-  component:LoginComponent},
-  {path:'register',
-  component:RegisterComponent},
-  {path:'welcome',
-  component:WelcomeComponent},
-  {path:'menu',
-  component:MenuComponent},
-  {path:'home',
-  component:HomeComponent},
-  {path:'checkout',
-  component:CheckoutComponent},
-  {path:'success',
-  component:SuccessComponent},
-  {path:'merchantWelcome',
-  component:MerchantWelcomeComponent},
-  {path:'merchantMenu',
-  component:MerchantMenuComponent},
-  {path:'',
-  component:HomeComponent},
-  {path:'addItem',
-  component:AddItemComponent},
-  {path:'contactUs',
-  component:ContactUsComponent},
+const appRoutes: Routes = [
+  {path: 'login',
+  component: LoginComponent},
+  {path: 'register',
+  component: RegisterComponent},
+  {path: 'welcome',
+  component: WelcomeComponent},
+  {path: 'library',
+  component: LibraryComponent},
+  {path: 'home',
+  component: HomeComponent},
+  {path: 'checkout',
+  component: CheckoutComponent},
+  {path: 'success',
+  component: SuccessComponent},
+  {path: 'authorWelcome',
+  component: AuthorWelcomeComponent},
+  {path: 'authorLibrary',
+  component: AuthorLibraryComponent},
+  {path: '',
+  component: HomeComponent},
+  {path: 'addItem',
+  component: AddItemComponent},
+  {path: 'contactUs',
+  component: ContactUsComponent},
+  {path: 'video',
+  component: VideoComponent},
+  {path: 'home-bg',
+    component: HomebgComponent},
+  {path: 'home-fr',
+    component: HomefrComponent}
 ];
 
 @NgModule({
@@ -52,17 +62,20 @@ const appRoutes:Routes=[
     RegisterComponent,
     HomeComponent,
     WelcomeComponent,
-    MenuComponent,
+    LibraryComponent,
     CheckoutComponent,
     SuccessComponent,
-    MerchantWelcomeComponent,
-    MerchantMenuComponent,
+    AuthorWelcomeComponent,
+    AuthorLibraryComponent,
     AddItemComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    VideoComponent,
+    HomebgComponent,
+    HomefrComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes,{useHash: true}),
+    RouterModule.forRoot(appRoutes, {useHash: true}),
     FormsModule,
     HttpClientModule,
     AppRoutingModule

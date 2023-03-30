@@ -9,22 +9,36 @@ public class Food {
     @Id
     private String id;
     private String item;
-    private int price;
+    private int weight;
     private int quantity;
     private String url;
+    private String description;
+    private String category;
     private String formID;
-    private String cartID;
+    private String favoritesID;
 
     public Food(){}
 
-    public Food(String id, String item, int price,int quantity, String url, String formID, String cartID) {
+    public Food(String id, String item,int quantity, String url, String formID, String favoritesID) {
         this.id = id;
         this.item = item;
-        this.price = price;
+
         this.quantity=quantity;
         this.url=url;
         this.formID=formID;
-        this.cartID=cartID;
+        this.favoritesID=favoritesID;
+    }
+
+    public Food(String id, String item, int quantity, String url, String description, String category, String formID, String favoritesID) {
+        this.id=id;
+        this.item=item;
+
+        this.quantity=quantity;
+        this.url=url;
+        this.description=description;
+        this.category=category;
+        this.formID=formID;
+        this.favoritesID=favoritesID;
     }
 
     public String getFormID() {
@@ -35,12 +49,12 @@ public class Food {
         this.formID = formID;
     }
 
-    public String getCartID() {
-        return cartID;
+    public String getFavoritesID() {
+        return favoritesID;
     }
 
-    public void setCartID(String cartID) {
-        this.cartID = cartID;
+    public void setFavoritesID(String favoritesID) {
+        this.favoritesID = favoritesID;
     }
 
     public String getUrl(){
@@ -68,11 +82,11 @@ public class Food {
     }
 
     public int getPrice() {
-        return price;
+        return weight;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
+    public void setPrice(int weight) {
+        this.weight = weight;
     }
 
     public int getQuantity() {
@@ -88,11 +102,27 @@ public class Food {
         return "Food{" +
                 "id='" + id + '\'' +
                 ", item='" + item + '\'' +
-                ", price=" + price +
+                ", weight=" + weight +
                 ", quantity=" + quantity +
                 ", url='" + url + '\'' +
                 ", formID='" + formID + '\'' +
-                ", cartID='" + cartID + '\'' +
+                ", favoritesID='" + favoritesID + '\'' +
                 '}';
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description=description;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category=category;
     }
 }

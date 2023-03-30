@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import {cart, menu, Quantity} from "../menu/menu.component";
+import {favorites, library, Quantity} from "../library/library.component";
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
-import {MenuServiceService} from "../menu-service.service";
+import {LibraryServiceService} from "../library-service.service";
 import { DomSanitizer } from '@angular/platform-browser';
 
 
 @Component({
-  selector: 'app-merchant-menu',
-  templateUrl: './merchant-menu.component.html',
-  styleUrls: ['./merchant-menu.component.css']
+  selector: 'app-author-library',
+  templateUrl: './author-library.component.html',
+  styleUrls: ['./author-library.component.css']
 })
-export class MerchantMenuComponent implements OnInit {
+export class AuthorLibraryComponent implements OnInit {
 
-  model:menu[];
+  model:library[];
 
-  modalCart:cart={
+  modalFavorites:favorites={
     quantity1:0,
     quantity2:0,
     quantity3:0
@@ -23,7 +23,7 @@ export class MerchantMenuComponent implements OnInit {
 
   values:Quantity[] = [];
 
-  constructor(private http:HttpClient, private router:Router,private menuService:MenuServiceService,
+  constructor(private http:HttpClient, private router:Router,private libraryService:LibraryServiceService,
               public _DomSanitizationService: DomSanitizer ) { }
 
   ngOnInit() {
@@ -38,7 +38,7 @@ export class MerchantMenuComponent implements OnInit {
   }
 
   getItems():void{
-    this.menuService.getItems().subscribe((men: any[]) => {
+    this.libraryService.getItems().subscribe((men: any[]) => {
       this.model = men;
       for (let i=0;i<this.model.length;i++){
         this.values.push(new Quantity());
@@ -48,16 +48,16 @@ export class MerchantMenuComponent implements OnInit {
   }
 
   getTotal():void{
-    let url = "http://localhost:8080/addToCart";
-    this.modalCart.quantity1=this.values[0].quantity;
-    this.modalCart.quantity2=this.values[1].quantity;
-    this.modalCart.quantity3=this.values[2].quantity;
+    let url = "http://localhost:8080/addToFavorites";
+    this.modalFavorites.quantity1=this.values[0].quantity;
+    this.modalFavorites.quantity2=this.values[1].quantity;
+    this.modalFavorites.quantity3=this.values[2].quantity;
     this.http.post<number>(url,this.values).subscribe(
       res=>{
         this.ngOnInit();
       },
       err=>{
-        alert("Error adding items to cart");
+        alert("Error adding items to favorites");
       }
     )
 

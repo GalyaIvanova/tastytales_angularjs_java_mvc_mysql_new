@@ -15,7 +15,7 @@ export class SuccessComponent implements OnInit {
       this.router.navigate(['login']);
     }
     if( sessionStorage.getItem("total")==null)
-      this.router.navigate(["menu"]);
+      this.router.navigate(["library"]);
   }
 
   clearLocal(){

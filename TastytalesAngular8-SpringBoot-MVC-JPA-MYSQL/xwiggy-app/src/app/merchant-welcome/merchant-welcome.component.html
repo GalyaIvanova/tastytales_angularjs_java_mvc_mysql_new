@@ -1,36 +1,40 @@
 <div class="body">
   <br><br><br>
-  <h1 align="center">SpringFood | HOME</h1>
+  <h1 align="center">TastyTales | Home</h1>
   <br><br>
 </div>
 <div class="card align-contents" align="center">
-  <p><img class="card-img-top" style="padding: 0 15px; float: left;" src="../../assets/images/merchant.png" alt="Card image cap"><font style="float: left">Welcome, {{modelMerchant.firstname}}<br> Account Type : Merchant</font></p>
+  <p><img class="card-img-top" style="padding: 0 15px; float: left;" src="../../assets/images/pngegg.png" alt="Card image cap"><font style="float: left">Welcome, {{modelAuthor.firstname}}<br> Account Type : Author</font></p>
   <div class="table-responsive panel">
     <table class="table">
       <tbody>
       <tr>
         <td class="text-success" align="right"><i class="fa fa-user"></i> First Name</td>
-        <td>{{modelMerchant.firstname}}</td>
+        <td>{{modelAuthor.firstname}}</td>
       </tr>
       <tr>
         <td class="text-success" align="right"><i class="fa fa-user-circle"></i> Last Name</td>
-        <td>{{modelMerchant.lastname}}</td>
+        <td>{{modelAuthor.lastname}}</td>
       </tr>
       <tr>
         <td class="text-success" align="right"><i class="fa fa-mobile"></i> Mobile Number</td>
-        <td>{{modelMerchant.phone}}</td>
+        <td>{{modelAuthor.phone}}</td>
       </tr>
       <tr>
         <td class="text-success" align="right"><i class="fa fa-envelope"></i> E-Mail ID</td>
-        <td>{{modelMerchant.email}}</td>
+        <td>{{modelAuthor.email}}</td>
       </tr>
       <tr>
         <td style="float: right"><button class="bigbutton" routerLink="/home" (click)="clearLocal()"><span>Log Out</span></button></td>
-        <td><button class="bigbutton" routerLink="/merchantMenu"><span>Alter Menu</span></button></td>
+        <td><button class="bigbutton" routerLink="/authorLibrary"><span>Edit Library</span></button></td>
       </tr>
       </tbody>
     </table>
   </div>
 </div>
+<!--<div class="center">-->
+<!--  <img src="assets/img/cheerful-young-chef.png" alt="Image Cook">-->
+<!--  <img src="assets/img/young-smiling-chef-holding-cloche (1).png" alt="Image Cook">-->
+<!--</div>-->
 
 

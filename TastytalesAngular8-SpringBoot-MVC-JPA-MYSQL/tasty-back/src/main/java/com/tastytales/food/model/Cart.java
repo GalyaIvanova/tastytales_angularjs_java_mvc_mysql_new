@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Cart {
+public class Favorites {
 
     @Id
     private int quantity1;
@@ -14,9 +14,9 @@ public class Cart {
     private int quantity5;
     private int quantity6;
 
-    public Cart(){}
+    public Favorites(){}
 
-    public Cart(int quantity1, int quantity2, int quantity3, int quantity4, int quantity5, int quantity6) {
+    public Favorites(int quantity1, int quantity2, int quantity3, int quantity4, int quantity5, int quantity6) {
         this.quantity1 = quantity1;
         this.quantity2 = quantity2;
         this.quantity3 = quantity3;
@@ -75,7 +75,7 @@ public class Cart {
 
     @Override
     public String toString() {
-        return "Cart{" +
+        return "Favorites{" +
                 "quantity1=" + quantity1 +
                 ", quantity2=" + quantity2 +
                 ", quantity3=" + quantity3 +

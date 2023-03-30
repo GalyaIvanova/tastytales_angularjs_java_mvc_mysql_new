@@ -14,14 +14,14 @@ public class User {
     private String email;
     private String address;
     private int phone;
-    private boolean merchant;
+    private boolean author;
 
     public User() {
 
     }
 
     public User(String username, String password, String firstname, String lastname, String email, String address, int phone,
-                boolean merchant) {
+                boolean author) {
         this.username = username;
         this.password = password;
         this.firstname = firstname;
@@ -29,15 +29,15 @@ public class User {
         this.email = email;
         this.address = address;
         this.phone = phone;
-        this.merchant=merchant;
+        this.author=author;
     }
 
-    public boolean isMerchant() {
-        return merchant;
+    public boolean isAuthor() {
+        return author;
     }
 
-    public void setMerchant(boolean merchant) {
-        this.merchant = merchant;
+    public void setAuthor(boolean author) {
+        this.author = author;
     }
 
     public String getUsername() {
@@ -109,7 +109,7 @@ public class User {
                 ", email='" + email + '\'' +
                 ", address='" + address + '\'' +
                 ", phone=" + phone +
-                ", merchant=" + merchant +
+                ", author=" + author +
                 '}';
     }
 }

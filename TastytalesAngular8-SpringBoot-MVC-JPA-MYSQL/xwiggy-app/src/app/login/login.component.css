@@ -1,10 +1,10 @@
 html, body{
-  background-color: #393939;
+  /*//background-color: #393939;*/
 }
 
 .loginbody {
   background-size:100% 100%;
-  background-color: #393939;
+  /*background-color: #393939;*/
   background-repeat:no-repeat;
   color: white;
   font: 14px Helvetica, sans-serif;
@@ -62,3 +62,57 @@ form div {
   right: 0;
 }
 
+.login-form {
+  width: 400px;
+  background-color: #fff;
+  padding: 20px;
+  margin: 100px auto;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: saddlebrown;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: black;
+}
+
+input[type="text"],
+input[type="password"] {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 15px;
+  border: none;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.register-button,
+.signin-button {
+  background-color: #FFCE3B;
+  color: #fff;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 150px;
+}
+
+.register-button:hover,
+.signin-button:hover {
+  background-color: #eeb200;
+}

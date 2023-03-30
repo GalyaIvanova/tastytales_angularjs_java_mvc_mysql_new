@@ -18,7 +18,7 @@ export class ContactUsComponent implements OnInit {
     firstname:'',
     lastname:'',
     address:'',
-    merchant:null
+    author:null
   };
 
   modelMessage:contact={
