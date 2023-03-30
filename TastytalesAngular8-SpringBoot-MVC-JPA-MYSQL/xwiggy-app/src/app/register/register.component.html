@@ -1,13 +1,14 @@
-<div class="container body">
+<div class="container body reg-form ">
   <br><br><br><br>
-  <H1 align="center">SpringFood | Registration</H1>
+  <H1 align="center">TastyTales | Registration</H1>
   <br><br><br>
 
-  <div class="container" align="center">
+  <div class="container " align="center">
     <div class="row">
       <div class="offset-3"></div>
       <div class="col-md-6">
-        <form name="form" #f="ngForm" (ngSubmit)="emailValidation&&phoneValidation&&passwordValidation&&f.form.valid && registerUser()" novalidate class="feedback-form">
+        <form name="form" #f="ngForm" (ngSubmit)="emailValidation && registerUser()" novalidate class="feedback-form">
+<!--        <form name="form" #f="ngForm" (ngSubmit)="emailValidation&&phoneValidation&&passwordValidation&&f.form.valid && registerUser()" novalidate class="feedback-form">-->
           <div class="container" style="height: 35px;">
           <div *ngIf="present" class="alert alert-danger alert-box" align="center" style="width: 75%; margin: auto;">
             <strong>UserName Already Taken!</strong>
@@ -155,8 +156,8 @@
                 </td>
                 <td><select class="form-control" [(ngModel)]="options"
                 name="options" id="options">
-                  <option>User</option>
-                  <option>Merchant</option>
+                  <option>Guest</option>
+                  <option>Cook</option>
                 </select></td>
               </tr>
             </div>
@@ -164,8 +165,8 @@
 
           <table align="center" style="padding-right:10%">
             <tr>
-              <td><button type="submit" class="bigbutton">
-                <span> Register</span></button>
+              <td><button type="submit" class="bigbutton" value="Register">
+               <span> Register</span></button>
               </td>
               <td><button routerLink="/home" class="bigbutton"><span>Home</span></button> </td>
             </tr>

@@ -9,78 +9,79 @@ import {Router} from '@angular/router';
 })
 export class AddItemComponent implements OnInit {
 
+  constructor(private http: HttpClient, private router: Router) { }
 
-  newFoodItems: foodItems={
-    id:'',
-    name:'',
-    price:null,
-    quantityAvailable:null,
-    fileDataF:null
+
+  newFoodItems: foodItems = {
+    id: '',
+    name: '',
+    price: null,
+    description: null,
+    quantityAvailable: null,
+    fileDataF: null,
+    category: null
   };
 
-  constructor(private http:HttpClient, private router:Router) { }
+  url: string = null;
+
+  selectedFile: any = null;
+
+  present: boolean = null;
 
   ngOnInit() {
-    if(sessionStorage.length==0)
+    if (sessionStorage.length == 0) {
       this.router.navigate(['welcome']);
+    }
   }
-
-  url:string=null;
-  onSubmit():void{
+  onSubmit(): void {
     const formData = new FormData();
     formData.append('file', this.selectedFile);
-    formData.append('newFoodItem',JSON.stringify(this.newFoodItems));
+    formData.append('newFoodItem', JSON.stringify(this.newFoodItems));
     console.log(formData.get('file'));
     console.log(formData.get('newFoodItem'));
 
-    if(formData.get('file')==null || formData.get('file')==undefined)
-    {
+    if (formData.get('file') == null || formData.get('file') == undefined) {
       console.log(formData.get('file'));
-      this.url="http://localhost:8080/addNewItem";
-    }
-    else
-    {
-      this.url="http://localhost:8080/addNewItemUrl";
+      this.url = 'http://localhost:8080/addNewItem';
+    } else {
+      this.url = 'http://localhost:8080/addNewItemUrl';
     }
     this.http.post(this.url, formData)
       .subscribe(
-        res=>
-        {
+        res => {
           console.log(this.newFoodItems);
-          alert("Item Added Successfully!");
-        },err=>{
-          alert("Failed to add item. Please Try after sometime!");
+          alert('Item Added Successfully!');
+        }, err => {
+          alert('Failed to add item. Please Try after sometime!');
         }
-      )
+      );
   }
-
-  selectedFile:any=null;
 
   onFileSelected(event) {
     this.selectedFile = event.target.files[0];
   }
 
-  present:boolean=null;
-
   checkAvailability() {
-    this.http.post<boolean>("http://localhost:8080/checkItemId",this.newFoodItems.id).subscribe(
-      res=>{
-        this.present=res;
-      },err=>{
-        alert("Error. Try After Sometime");
+    this.http.post<boolean>('http://localhost:8080/checkItemId', this.newFoodItems.id).subscribe(
+      res => {
+        this.present = res;
+      }, err => {
+        alert('Error. Try After Sometime');
       }
-    )
+    );
   }
 
-  clearLocal(){
+  clearLocal() {
     sessionStorage.clear();
   }
 }
 
 export interface foodItems {
   id: string;
-  name:string;
-  price:number;
-  quantityAvailable:number;
-  fileDataF:string;
+  name: string;
+  price: number;
+  description: string;
+  quantityAvailable: number;
+  fileDataF: string;
+  category: string;
 }

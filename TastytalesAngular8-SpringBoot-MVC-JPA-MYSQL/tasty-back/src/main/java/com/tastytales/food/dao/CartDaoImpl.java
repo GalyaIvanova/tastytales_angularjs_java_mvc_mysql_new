@@ -76,15 +76,15 @@ public class CartDaoImpl{
         if(!file.isEmpty())
         if(saveFileToAssets(file))
         {
-            foodDao.save(new Food(newFood.getId(),newFood.getName(),newFood.getPrice(),newFood.getQuantityAvailable(),"/assets/"+file.getOriginalFilename(),"",""));
-//            foodDao.save(new Food(newFood.getId(),newFood.getName(),newFood.getPrice(),newFood.getQuantityAvailable(),"\\"+file.getOriginalFilename(),"",""));
+            foodDao.save(new Food(newFood.getId(),newFood.getName(),newFood.getQuantityAvailable(),"/assets/"+file.getOriginalFilename(),"",""));
+            //foodDao.save(new Food(newFood.getId(),newFood.getName(),newFood.getPrice(),newFood.getQuantityAvailable(),"\\"+file.getOriginalFilename(),"",""));
         }
         return true;
     }
 
     public boolean addNewItemWithUrl(String newFoodData) throws IOException {
         NewFood newFood = new ObjectMapper().readValue(newFoodData,NewFood.class);
-        foodDao.save(new Food(newFood.getId(),newFood.getName(),newFood.getPrice(),newFood.getQuantityAvailable(),newFood.getFileDataF(),"",""));
+        foodDao.save(new Food(newFood.getId(),newFood.getName(),newFood.getQuantityAvailable(),newFood.getFileDataF(),"",""));
         return true;
     }
 

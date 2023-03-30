@@ -31,17 +31,17 @@ form div {
 }
 
 .bigbutton {
-  border-radius: 4px;
-  background-color: #f4511e;
+  background-color: #FFCE3B;
+  color: #fff;
+  padding: 10px;
+
+  font-size: 16px;
+  border-radius: 15px;
   border: none;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 15px;
-  padding: 20px;
-  width: 175px;
-  transition: all 0.5s;
   cursor: pointer;
-  margin: 5px;
+  margin-top: 10px;
+  margin:20px;
+  width: 150px;
 }
 
 .bigbutton span {
@@ -83,6 +83,12 @@ p{
 
 .input-align{
   text-align: center;
+}
+
+div.card-deck{
+  width: 25pc;
+  height: 27pc;
+  padding: 20px;
 }
 
 

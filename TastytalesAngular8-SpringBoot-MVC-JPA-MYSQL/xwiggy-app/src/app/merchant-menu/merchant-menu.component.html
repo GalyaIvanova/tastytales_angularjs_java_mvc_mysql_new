@@ -1,6 +1,6 @@
 <div class="body">
   <br><br>
-  <h1 align="center">SpringFood | Menu</h1>
+  <h1 align="center">TastyTales | Library</h1>
   <br><br>
 
 <!--
@@ -55,7 +55,7 @@
       <div class="card-deck" *ngFor="let m of model; let index=index" style="padding-right: 3px">
         <div class="card" style="width: 18rem;">
           <!--<img class="card-img-top zoom" src="{{m.url}}" alt="{{m.item}}"  style="height: 190px">-->
-          <img class="card-img-top zoom" [src]="_DomSanitizationService.bypassSecurityTrustUrl(m.url)" style="height: 190px"/>
+          <img class="card-img-top zoom" [src]="_DomSanitizationService.bypassSecurityTrustUrl(m.url)" style="height: 17pc"/>
           <div class="card-block">
             <div class="card-body">
               <h5 class="card-title" style="color: black">{{m.item}}</h5>

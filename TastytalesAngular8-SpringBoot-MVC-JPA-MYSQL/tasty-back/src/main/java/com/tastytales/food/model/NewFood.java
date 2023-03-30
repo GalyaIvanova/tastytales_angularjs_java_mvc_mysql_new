@@ -5,6 +5,8 @@ public class NewFood {
    private String id;
    private String name;
    private int price;
+    private String description;
+    private String category;
    private int quantityAvailable;
    private String fileDataF;
 
@@ -17,6 +19,8 @@ public class NewFood {
         this.quantityAvailable = quantityAvailable;
         this.fileDataF = fileDataF;
     }
+
+
 
     public String getId() {
         return id;
@@ -67,5 +71,22 @@ public class NewFood {
                 ", quantityAvailable=" + quantityAvailable +
                 ", fileDataF=" + fileDataF +
                 '}';
+    }
+
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description=description;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category=category;
     }
 }

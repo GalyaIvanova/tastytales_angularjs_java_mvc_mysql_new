@@ -960,4 +960,19 @@ footer {
   text-align: center;
   display: flex;
 }
+div.category {
+  padding:20px;
+  width: fit-content;
+}
+h4{
+  margin: 0;
+}
 
+input, textarea, select{
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 15px;
+  border: none;
+  margin-bottom: 20px;
+  color: black;
+}

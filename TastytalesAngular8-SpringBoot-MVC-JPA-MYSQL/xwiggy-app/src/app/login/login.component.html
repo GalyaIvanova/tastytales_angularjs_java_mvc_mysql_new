@@ -3,62 +3,188 @@
 
 <body>
 <div class="loginbody">
-<br><br><br><br>
-<H1 align="center">LOGIN TO SpringFood</H1>
-<br><br><br><br><br><br>
-<div align="center" style="color: #f44336">{{message}}</div>
-<div class="container" align="center">
-  <div class="row">
-    <div class="offset-3"></div>
-    <div class="col-md-6">
-      <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && sendFeedback()" novalidate class="feedback-form">
-        <!-- Name -->
-        <div class="form-group">
-          <label for="username">Username</label>
-          <input type="text"
-                 id="username"
-                 class="form-control"
-                 name="username"
-                 placeholder="username"
-                 [(ngModel)]="model.username"
-                 #username="ngModel"
-                 [ngClass]="{ 'is-invalid': f.submitted && username.invalid }"
-                 required/>
-          <!-- input validation group -->
-          <div *ngIf="f.submitted && username.invalid" class="invalid-input">
-            <!-- individual validation errors -->
-            <div *ngIf="username.errors?.required">Field is required</div>
-          </div>
-        </div>
-        <!-- Email -->
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password"
-                 id="password"
-                 class="form-control"
-                 name="password"
-                 placeholder="password"
-                 [(ngModel)]="model.password"
-                 #password="ngModel"
-                 [ngClass]="{ 'is-invalid': f.submitted && password.invalid }"
-                 required="required"/>
-          <!-- input validation group -->
-          <div *ngIf="f.submitted && password.invalid" class="invalid-input">
-            <!-- individual validation errors -->
-            <div *ngIf="password.errors?.required">Field is required</div>
-          </div>
-        </div>
 
 
-        <button type="submit" class="bigbutton">
-          <span> Login</span>
-        </button>
-        <button class="bigbutton" routerLink="/register"><span>Register</span></button>
+
+
+  <header>
+    <div class="container">
+      <div class="logo">
+        <a href="index_en.html"><img src="assets/img/logo.png" alt="Logo" width="100" height="100" style="margin-top: 10px;"></a>
+      </div>
+
+      <form class="search-form">
+        <input type="text" name="search" placeholder="Recherche...">
+        <button type="submit">Rechercher</button>
       </form>
+      <div class="links">
+        <a href="login.html">
+          <img src="assets/img/user.png" alt="Image 1" width="50" height="50">
+        </a>
+        <a href="lang.html">
+          <img src="assets/img/uk.png" alt="Langue" width="50" height="50">
+        </a>
+      </div>
     </div>
-    <div class="offset-3"></div>
+    <div class="categories">
+      <a href="#"><div class="category">
+        <h4>Breakfast</h4>
+      </div></a>
+      <a href="#"><div class="category">
+        <h4>Lunch</h4>
+      </div></a>
+      <a href="#"><div class="category">
+        <h4>Dinner</h4>
+      </div></a>
+      <a href="#"><div class="category">
+        <h4>Desserts</h4>
+      </div></a>
+      <a href="#"><div class="category">
+        <h4>Drinks</h4>
+      </div></a>
+    </div>   <br>
+  </header>
+<!--  <H1 align="center">LOGIN TO SpringFood</H1>-->
+<!--  <div class="login-form">-->
+<!--    <h2>Login</h2>-->
+<!--    <form>-->
+<!--      <label for="username">Username:</label>-->
+<!--      <input type="text" id="username" name="username" placeholder="Enter your username" required>-->
+
+<!--      <label for="password">Password:</label>-->
+<!--      <input type="password" id="password" name="password" placeholder="Enter your password" required>-->
+
+<!--      <button type="submit" class="register-button">Register</button>-->
+<!--      <button type="submit" class="signin-button">Sign In</button>-->
+<!--    </form>-->
+<!--  </div>-->
+  <div align="center" style="color: #f44336">{{message}}</div>
+  <div class="container" align="center">
+    <div class="row">
+      <div class="offset-3"></div>
+      <div class="login-form">
+        <H1 align="center" style="color: #393939">LOGIN</H1>-->
+        <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && sendFeedback()" novalidate class="feedback-form">
+          <!-- Name -->
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text"
+                   id="username"
+                   class="form-control"
+                   name="username"
+                   placeholder="username"
+                   [(ngModel)]="model.username"
+                   #username="ngModel"
+                   [ngClass]="{ 'is-invalid': f.submitted && username.invalid }"
+                   required/>
+            <!-- input validation group -->
+            <div *ngIf="f.submitted && username.invalid" class="invalid-input">
+              <!-- individual validation errors -->
+              <div *ngIf="username.errors?.required">Field is required</div>
+            </div>
+          </div>
+          <!-- Email -->
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password"
+                   id="password"
+                   class="form-control"
+                   name="password"
+                   placeholder="password"
+                   [(ngModel)]="model.password"
+                   #password="ngModel"
+                   [ngClass]="{ 'is-invalid': f.submitted && password.invalid }"
+                   required="required"/>
+            <!-- input validation group -->
+            <div *ngIf="f.submitted && password.invalid" class="invalid-input">
+              <!-- individual validation errors -->
+              <div *ngIf="password.errors?.required">Field is required</div>
+            </div>
+          </div>
+
+
+          <button type="submit" class="bigbutton signin-button">
+            <span> Login</span>
+          </button>
+          <button class="bigbutton register-button" routerLink="/register"><span>Register</span></button>
+        </form>
+      </div>
+      <div class="offset-3"></div>
+    </div>
   </div>
-</div>
+
+  <footer>
+    <div class="footer_categories">
+      <p>Categories</p>
+      <ul>
+        <li><a href="#">Breakfast</a></li>
+        <li><a href="#">Lunch</a></li>
+        <li><a href="#">Dinner</a></li>
+        <li><a href="#">Desserts</a></li>
+        <li><a href="#">Drinks</a></li>
+      </ul>
+    </div>
+    <div class="team">
+      <p>About Us</p>
+      <ul>
+        <li><a href="#">Our Team</a></li>
+        <li><a href="#">The Devs</a></li>
+        <li><a href="#">The Graphic Designers</a></li>
+        <li><a href="#">The Comm</a></li>
+        <li><a href="#">Join Us</a></li>
+      </ul>
+    </div>
+    <div class="more">
+      <p>More</p>
+      <ul>
+        <li><a href="#">Our Blog</a></li>
+        <li><a href="#">Term & Conditions</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Goals</a></li>
+        <li><a href="#">Help</a></li>>
+      </ul>
+    </div>
+    <div class="contact">
+      <p>Contact</p>
+      <ul>
+        <li><a href="#">+33 4 54 89 90</a></li>
+        <li><a href="#">tastytales@cook.com</a></li>
+        <li><a href="#">5 rue Rimbaud, 75013</a></li>
+        <li><a href="#">Paris, France</a></li>
+        <li><a href="#">Social Media</a></li>
+      </ul>
+    </div>
+
+    <div class="social">
+      <a href="#"><img src="assets/img/logos/youtube.png" alt="YouTube" width="50px"></a>
+      <a href="#"><img src="assets/img/logos/facebook.png" alt="Facebook" width="50px"></a>
+      <a href="#"><img src="assets/img/logos/twitter.png" alt="Twitter" width="50px"></a>
+      <a href="https://www.tiktok.com/@tastytales.officiel"><img src="assets/img/logos/tiktok.png" alt="TikTok" width="50px"></a>
+      <a href="https://www.instagram.com/tastytales.off/"><img src="assets/img/logos/instagram.png" alt="Instagram" width="50px"></a>
+    </div>
+    <h3 class="rights">Tasty Tales Corp 2023 | All rights reserved</h3>
+  </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
 </body>
 </html>

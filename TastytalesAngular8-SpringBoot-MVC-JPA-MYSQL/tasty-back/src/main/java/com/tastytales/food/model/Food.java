@@ -12,17 +12,31 @@ public class Food {
     private int price;
     private int quantity;
     private String url;
+    private String description;
+    private String category;
     private String formID;
     private String cartID;
 
     public Food(){}
 
-    public Food(String id, String item, int price,int quantity, String url, String formID, String cartID) {
+    public Food(String id, String item,int quantity, String url, String formID, String cartID) {
         this.id = id;
         this.item = item;
-        this.price = price;
+
         this.quantity=quantity;
         this.url=url;
+        this.formID=formID;
+        this.cartID=cartID;
+    }
+
+    public Food(String id, String item, int quantity, String url, String description, String category, String formID, String cartID) {
+        this.id=id;
+        this.item=item;
+
+        this.quantity=quantity;
+        this.url=url;
+        this.description=description;
+        this.category=category;
         this.formID=formID;
         this.cartID=cartID;
     }
@@ -94,5 +108,21 @@ public class Food {
                 ", formID='" + formID + '\'' +
                 ", cartID='" + cartID + '\'' +
                 '}';
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description=description;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category=category;
     }
 }
